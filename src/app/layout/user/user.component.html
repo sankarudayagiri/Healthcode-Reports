@@ -1,0 +1,198 @@
+<div style="margin:20px;">
+   
+    <div class="container-fluid" >
+      <div class="row">
+          <div class="col-lg-8 text-center " style="background-color: white; padding:0px; ">
+              <nav class="" style="border-right:1px solid #e6e6e6;">
+                <div class="nav nav-tabs tabMenu" id="nav-tab" role="tablist" style="padding-left:10px;">
+                  <a class="nav-item nav-link active" id="pop1-tab"  href="#pop1" data-toggle="tab" >All</a>
+                  <a class="nav-item nav-link" id="pop2-tab" href="#pop2" data-toggle="tab" >Group</a>
+                  <a class="nav-item nav-link" id="pop3-tab" href="#pop3"  data-toggle="tab" >Healthcode</a>
+                  <a class="nav-item nav-link" id="pop4-tab" href="#pop4"  data-toggle="tab" >Medical Center</a>
+                  <a class="nav-item nav-link" id="pop5-tab" href="#pop5"  data-toggle="tab" >Provider</a>
+                  <a [routerLink]="['/addUser']" class="nav-item nav-link ml-auto" style="color:#2ab6f7;">
+                      <i class="fa fa-fw fa-plus-circle"></i>
+                      <span>{{ 'Add User' }}</span>
+                  </a>           
+                </div>
+               
+              </nav>
+
+              <!-- search bar -->
+
+              <div class="row ">
+                  <div class="col-md-12">
+                      <form class="card card-sm" style="border:none;">
+                          <div class="card-body row no-gutters align-items-center" style="padding:5px; border-right:1px solid #e6e6e6;">
+                              <div class="col-auto">
+                                  <i class=" fa fas fa-search fa-lg" style="color:#c8c8c8; padding:15px;"></i>
+                              </div>
+                              <!--end of col-->
+                              <div class="col">
+                                  <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search here...">
+                              </div>
+                              <!--end of col-->
+                              <div class="col-auto">
+                                  <!-- <i class=" fa fas fa-signal" style="color:#c8c8c8; padding:5px;"></i>
+                                  <i class=" fa fas fa-exchange" style="color:#c8c8c8; padding:5px;"></i> -->
+                                  <img src="assets/images/filter.png" width="" height="" style="padding-right: 20px;">
+                                  <img src="assets/images/sort-by-alphabet.png" width="" height="" style="padding-right: 30px;">
+                              </div>
+                              <!--end of col-->
+                          </div>
+                      </form>
+                  </div>
+                  <!--end of col-->
+              </div>
+              <!-- <div class="card" style="border-left:6px solid #2ab6f7; border-radius: 0px; height:119px;">
+                 <div class="row">
+                    <div class="col-md-1 " style="">
+                        <img src="assets/images/im.jpg" width="65" height="65" style="border-radius: 50%; padding:10px; float:left;">
+                      </div>
+                      <div class="col-md-11" style="">
+                        <div class="card-header " style="background-color: white; border-bottom:none;"><span style="float:left;">Mr.Some Name</span></div>
+                        <div class="card-body">
+                          <ul >
+                            <li>User ID</li>
+                            <li>Site Name</li>
+                            <li>Site ID</li>
+                            <li>Days</li>
+                            <li>Attempt</li>
+                          </ul>
+                        </div> 
+                      </div>
+                 </div>
+              </div> -->
+              <!-- <div class="card" style="border-left:6px solid #2ab6f7; border-radius: 0px; height:119px;">
+                <div class="row" >
+                    <div class="card-img-left">
+                        <img src="assets/images/im.jpg" width="65" height="65" alt="Card image cap" style="border-radius: 50%; padding:10px;">	  
+                   
+                    </div>
+              
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: left;">Mr.Some name</h5>
+                        <ul >
+                            <li>User ID</li>
+                            <li>Site Name</li>
+                            <li>Site ID</li>
+                            <li>Days</li>
+                            <li>Attempt</li>
+                        </ul>
+                    </div>
+                </div>
+              </div> -->
+              <nav>
+                    <div class="nav activeContact flex-column" id="nav-tab" role="tablist" style="border-right:1px solid #e6e6e6;">
+                            <div class="card  nav-item nav-link " style=" border-bottom: none; border-right:none; border-radius: 0px; height:119px;" *ngFor="let user of userData; let i= index;" data-toggle="tab" (click)="disProfile(i)">
+                                    <div class="row" >
+                                        <div class="card-img-left">
+                                            <img src="assets/images/im.jpg" width="65" height="65" alt="Card image cap" style="border-radius: 50%; padding:10px;">	  
+                                       
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                        <h4 style="text-align: left;">{{user.name}}</h4> 
+                                          <table class=" table table-responsive tableContact" > 
+                                              <tr>
+                                                  <th>User Id</th>
+                                                  <th>Site Name</th>
+                                                  <th>Site Id</th>
+                                                  <th>Days</th>
+                                                  <th>Attempt</th>
+                                              </tr>
+                                              <tr>
+                                                  <td>{{user.userId}}</td>
+                                                  <td>{{user.siteName}}</td>
+                                                  <td>{{user.siteId}}</td>
+                                                  <td>{{user.days}}</td>
+                                                  <td>{{user.attempt}}</td>
+                                              </tr>
+                                          </table>
+                                        </div>
+                                    </div>
+                                  </div>
+                      </div>
+              </nav>
+              <div class="card" style="margin-top: -1px;border-top: none;">                   
+                  <div class="card-footer" style="background-color: white; border-radius: 0px;">Footer</div>
+              </div>
+             
+             
+          </div>
+          <div class="col-lg-4" style="background-color: white;">
+            <nav class="" style="border:none !important;">
+                <div class="nav nav-tabs" style="border:none !important;">
+                 
+                  <a  class="nav-item nav-link ml-auto" style="padding:20px 0 20px 0;">
+                      <!-- <i class="fa fa-fw fas fa-ellipsis-h"></i> -->
+                      <img src="assets/images/options.png" width="" height="" style="">
+                     
+                  </a>           
+                </div>
+               
+            </nav>
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic flex-container">
+					<img src="assets/images/im.jpg" class=""  style="border-radius: 50%; padding:10px;" alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{userData[pIndex].name}}
+					</div>
+					<div class="profile-usertitle-job">
+						{{userData[pIndex].phone}}
+					</div>
+                </div>
+                <div>
+                    <div style="display:inline-block; padding:20px;">
+                        <i class=" fa fas fa-phone" style="padding:10px;"></i>
+                        {{userData[pIndex].phone}}
+                    </div>
+                    <div style="display:inline-block; padding:20px;">
+                        <i class=" fa fas fa-envelope" style="padding:10px;"></i>
+                        {{userData[pIndex].email}}
+                    </div>
+                </div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<br>				
+                <table class="table tableProfile borderless">                    
+                      <tr>
+                        <th>Site name</th>
+                        <td style="float:right;">{{userData[pIndex].siteName}}</td>                        
+                      </tr>                
+                      <tr>
+                        <th>site id</th>
+                        <td style="float:right;">{{userData[pIndex].siteId}}</td>                       
+                      </tr>
+                      <tr>
+                        <th>days</th>
+                        <td style="float:right;">{{userData[pIndex].days}}</td>                        
+                      </tr>
+                      <tr>
+                        <th>attempt</th>
+                        <td style="float:right;">{{userData[pIndex].attempt}}</td>                       
+                      </tr>
+                      <tr>
+                        <th>last logged in</th>
+                        <td style="float:right;">dd/mm/yyyy | hh:mm:ss</td>                       
+                      </tr>
+                      <tr>
+                        <th>created</th>
+                        <td style="float:right;">dd/mm/yyyy | hh:mm:ss</td>                       
+                      </tr>
+                      <tr>
+                        <th>profile</th>
+                        <td style="float:right;">some profile</td>                       
+                      </tr>                    
+                  </table>
+			</div>
+		</div>
+      </div>
+    </div>
+
+</div>

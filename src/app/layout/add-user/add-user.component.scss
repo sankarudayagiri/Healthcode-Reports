@@ -1,0 +1,724 @@
+.row-cls{
+    margin-bottom:-5px;
+}
+.cursor-default{
+    cursor:default;
+}
+
+//SP styles.....
+.sp-button {
+    width:293px;
+    padding:13px;
+    font-size: 16px; 
+    font-weight: 600;
+    border-radius: 30px; 
+    background-color: #00A1DE;
+    color:white;
+    border:none;
+}
+.sp-button:hover{
+    box-shadow: none;
+    border: none;
+}
+//USER TYPE STYLes ... ...
+.sp-num{
+    color:#00A1DE; 
+    font-size: 42px; 
+    padding:40px 40px 20px 40px; 
+    font-weight: 800; 
+    letter-spacing: 5px;
+    
+}
+.sp-num span{
+    cursor: pointer;
+}
+
+
+
+
+.roundColor{
+    color:#94999D;
+    font-weight: 600;
+    padding-top:12px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    line-height: 0;
+   // background-color: DodgerBlue;
+  }  
+
+.flex-containerAddUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .usr-type{
+     margin:50px;
+  }
+  .usr-type .usr-type-img{
+      padding-bottom: 12px;
+      cursor: pointer;
+  }
+  .usr-type .usr-type-img2{
+      display: none;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+.usr-type:hover{
+     .usr-type-img{
+        display: none;
+    }
+    .usr-type-img2{
+        display: inline-block;
+    }
+    .roundColor{
+        color: #00A1DE;
+    }
+}
+
+  //place holder style
+  .sp-class::placeholder{
+    font-weight: bold;
+    font-size: 20px; 
+    color:#EBEBEB;
+  }
+  .sp-class::-webkit-input-placeholder {
+    //text-align: center;
+    font-weight: bold;
+    font-size: 20px; 
+    color:#EBEBEB;   
+ }
+ 
+ .sp-class:-moz-placeholder { /* Firefox 18- */
+   // text-align: center; 
+    font-weight: bold;
+    font-size: 20px;
+    color:#EBEBEB;    
+ }
+ 
+ .sp-class::-moz-placeholder {  /* Firefox 19+ */
+   // text-align: center;  
+    font-weight: bold;
+    font-size: 20px; 
+    color:#EBEBEB;  
+ }
+ 
+ .sp-class:-ms-input-placeholder {  
+    //text-align: center; 
+    font-weight: bold;
+    font-size: 20px;   
+    color:#EBEBEB;
+ }
+
+//  form fill styles starts ... .... ....
+
+
+hr{
+    border-color:#E3E3E3;
+    margin:unset;
+}
+
+.addUser-container{
+    // margin:48px 175px 0px 175px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .tab-block > .flex-container-info{
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .tab-toggle{
+        display:none;
+    }
+    .tab-tooltip .tooltiptext{
+        display:inline-block !important;
+    }
+    .tableInfo td,th{       
+        padding-right:20px !important;
+    }
+}
+
+// tab tooltip ... starts... ....
+
+.tab-tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    z-index: 0;
+    cursor: pointer;
+    // margin-bottom:100px;
+    // border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+    
+    /* Tooltip text */
+    .tab-tooltip .tooltiptext {
+    display: none;
+    visibility: visible;
+    width: 120px;
+    line-height: 30px !important;    
+    // background-color: #555;
+    background-color: #94999D;
+    color: #fff;
+    text-align: center;
+    padding: 5px 3px;
+    border-radius: 6px;
+    margin-top: -5px;
+    
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    top: 120%;
+    left: 50%;
+    margin-left: -60px;
+    
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+    }
+    
+    /* Tooltip arrow */
+    .tab-tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color:  transparent transparent #94999D transparent;
+    }
+    
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tab-tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+    }
+   
+    // tab tooltip ... ends ..... ...
+
+.tab-block{
+    padding:60px 0px 45px 0px;
+}
+
+
+//profile table styles .....starts...
+.table-profile th, td {
+    text-align: left;
+    padding: 10px;
+    border:none;
+    font-size: 14px;
+  }
+    
+//   tr:first-child{background-color:blue}
+ .table-profile tr:nth-child(odd){background-color: #ffffff}
+  .table-profile tr:nth-child(even){background-color: #fbfbfc}
+  .table-profile thead tr:first-child{background-color:unset}
+  
+//profile table styles ends ....a....
+
+// placeholder styles starts... ....
+.date-input::placeholder{
+    font-weight: 600;
+    //font-size: 20px; 
+    color:#CECECE;
+  }
+  .date-input::-webkit-input-placeholder {
+    //text-align: center;
+    font-weight: 600;
+    // font-size: 20px; 
+    color:#CECECE;   
+ }
+ 
+ .date-input:-moz-placeholder { /* Firefox 18- */
+   // text-align: center; 
+    font-weight: 600;
+    // font-size: 20px;
+    
+    color:#CECECE;    
+ }
+ 
+ .date-input::-moz-placeholder {  /* Firefox 19+ */
+   // text-align: center;  
+    font-weight: 600;
+    // font-size: 20px; 
+    color:#CECECE;  
+ }
+ 
+ .date-input:-ms-input-placeholder {  
+    //text-align: center; 
+    font-weight: 600;
+    // font-size: 20px;   
+    color:#CECECE;
+ }
+// placeholder styles ends .. ....
+
+.pvcy-bold{
+    font-weight: 800;
+    font-size:14px;
+}
+.pvcy-semi{
+    font-weight: 600;
+    font-size:14px;
+}
+
+.flex-container{
+    display:flex;
+   // border:1px solid red;
+    align-items: stretch;
+    //padding:10px 0 10px 0;
+}
+.flex-container .tab-header{
+    border:1px solid #E3E3E3;
+   // padding:10px;
+   background-color: #F2F2F2;
+    flex-grow: 1;
+    text-align:center;
+    line-height: 60px;
+    box-sizing: border-box;
+}
+.flex-container .tab-header .span-info {
+   padding-left:10px;
+   color:#94999D;
+   font-size: 14px;
+}
+
+.flex-container-info{
+    display:flex;
+    //justify-content: center;
+    align-items: center;
+}
+
+.flex-container-info .block-header{
+    font-size: 18px; 
+    margin:0;
+    font-weight: 600;
+}
+
+.flex-container-info .block-comment{
+    font-size: 14px; 
+    color:#94999D; 
+    margin:0;
+}
+
+.flex-container-info .block-img{
+    padding-right:10px;
+}
+
+
+.flex-container-info2{
+    display:flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.flex-container-info2 .form-group{
+    padding-right: 65px !important;
+    flex-grow: 1;
+    
+}
+
+.tableInfo td,th{
+    border:none;
+    padding:0 80px 0 0;
+    cursor:default;
+}
+
+.tableInfo th{
+    font-size: 14px;
+    color:#94999D;
+    font-weight: 600;
+}
+
+.tableInfo td{
+    font-size:18px;
+    font-weight: 600;
+}
+
+.form-control{
+    height: 60px; 
+    //width: 538px;
+}
+.form-group{
+    padding:0px 10px;
+}
+.form-group .field-size{
+    height: 60px; 
+    font-weight: 600;
+   // width: 259px;
+}
+ .form-group .lable-cls{
+    margin:-40px 0px; 
+    font-size:13px;
+    font-weight: 600; 
+    // padding-left:5px;
+    color:#94999D;
+ }
+ .form-group .lable-cls-date{
+    pointer-events: none; 
+    position: absolute; 
+    top: 10px; 
+    margin: unset;
+    font-size:13px;
+    font-weight: 600; 
+    // padding-left:5px;
+    color:#94999D;
+ }
+ .form-group-style{
+    border: 1px solid #EBEBEB; 
+    border-radius: 5px; 
+    //flex-grow:2; 
+    padding:4px 15px 0 15px !important; 
+    //margin-right:20px; 
+    background-color: white; 
+    height: 63px; 
+    min-width:30%
+ }
+
+ .form-group-style .fa-chevron-down{
+     padding-right:0px;
+ }
+// checkbox switch.... ... .....
+.checkbox-pointer{
+    cursor: pointer;
+}
+.checkbox.checbox-switch {
+    padding-left: 0;
+}
+
+.checkbox.checbox-switch label,
+.checkbox-inline.checbox-switch {
+    display: inline-block;
+    position: relative;
+    padding-left: 0;
+}
+.checkbox.checbox-switch label input,
+.checkbox-inline.checbox-switch input {
+    display: none;
+}
+.checkbox.checbox-switch label span,
+.checkbox-inline.checbox-switch span {
+   // width: 35px;
+    width:40px;
+    border-radius: 20px;
+    //height: 18px;
+    height: 24px;
+    border: 1px solid #dbdbdb;
+    background-color: white;
+    border-color: white;
+    box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.checkbox.checbox-switch label span:before,
+.checkbox-inline.checbox-switch span:before {
+    display: inline-block;
+    //width: 16px;
+    //height: 16px;
+    width:20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #B5B5B5;
+    content: " ";
+    top: 1px !important;
+    position: relative;
+    left: 0px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    top:-2px;
+}
+.checkbox.checbox-switch label > input:checked + span:before,
+.checkbox-inline.checbox-switch > input:checked + span:before {
+    display: inline-block;
+    // width: 16px;
+    // height: 16px;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    background: #79D351;
+    content: " ";
+    top: 0;
+    position: relative;
+    left: 0px;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    top:-2px;
+}
+.checkbox.checbox-switch label > input:checked + span:before,
+.checkbox-inline.checbox-switch > input:checked + span:before {
+    left: 16px;top:1px ;
+}
+
+/* Switch Primary */
+.checkbox.checbox-switch.switch-primary label > input:checked + span,
+.checkbox-inline.checbox-switch.switch-primary > input:checked + span {
+    background-color: white;
+    border-color: white;
+    /*box-shadow: rgb(0, 105, 217) 0px 0px 0px 8px inset;*/
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+}
+.checkbox.checbox-switch.switch-primary label > input:checked:disabled + span,
+.checkbox-inline.checbox-switch.switch-primary > input:checked:disabled + span {
+    background-color: red;
+    border-color: red;
+   /* box-shadow: rgb(109, 163, 221) 0px 0px 0px 8px inset;*/
+    transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;
+}
+
+// checkbox switch ends.. ... ... ....
+
+// radio buttom starts......
+  
+.customradio {
+    margin-right: 5%;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    //font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .customradio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: white;
+    border-radius: 50%;
+    border:1px solid #B5B5B5;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .customradio:hover input ~ .checkmark {
+    background-color: transparent;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .customradio input:checked ~ .checkmark {
+    background-color: white;
+    border:1px solid #B5B5B5;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .customradio input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .customradio .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgb(102, 106, 112);
+  }
+  
+  /* Custom Radio Button End*/
+
+//   radio button ends... ... ..
+
+// default icon change start ... ....
+
+select.input-lg:focus{   
+    box-shadow: none;
+}
+select.input-lg {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    border:transparent;
+    margin-top:-5px;
+    padding:0 0 0 5px; 
+    // padding: 0px;
+    // padding-bottom: 0px;
+    outline:none;
+    height: 30px !important;
+    /* no standardized syntax available, no ie-friendly solution available */
+  }
+
+  select + i.fa {
+    float: right;
+    margin-top: -30px;
+    margin-right: 5px;
+    /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+    pointer-events: none;
+    /* everything after this is just to cover up the original arrow */
+    /* (for browsers that don't support the syntax used above) */
+    background-color: #fff;
+    padding-right: 5px;
+  }
+
+//   default icaon change ends  ... ...
+
+  
+  .flex-containerAddUser input:focus{
+      box-shadow: none;
+      border:1px solid #EBEBEB;
+  }
+  .flex-containerAddUser input{
+      border:1px solid #EBEBEB;
+  }
+
+//   changing default behavior of input ends ... ..
+
+// submit and cancel button .. ..
+
+.flex-container-button{
+    display:flex; 
+    justify-content: center
+}
+
+.flex-container-button button{
+    border-radius: 25px;
+}
+.flex-container-button .btn-light{
+    background-color: #FFFFFF;
+    color:#00A1DE;
+    font-weight: 600;
+    border:none;
+    padding:9px 12px;
+}
+.flex-container-button .btn-light:hover{
+    border: none;
+}
+.flex-container-button .btn-primary{
+    background-color: #00A1DE;
+    color:#FFFFFF;
+    font-weight: 600;
+    border:none;
+    padding:9px 12px;
+
+}
+
+.count-pad{
+    // padding-left:5px;
+    font-weight: 600;
+}
+
+// form fill styles ends ... ... ..
+//for date .....
+.date-input{
+    border:none;
+    width:100%;
+    // margin-left: 5px;
+    font-weight: 600;
+    padding-top: 25px;
+    cursor:pointer !important;
+   
+    
+ }
+ .date-input:focus{
+     border:transparent;    
+     outline:none;
+
+ }
+
+ .sp-class{
+    padding: 5px 5px 5px 45px;
+ }
+
+ .wrapper{
+    position: relative;
+}
+
+.wrapper::before{
+    position: absolute;
+   	padding:16px 5px 14px 20px;
+    content:"SP";
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+// input number appearance starts....
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin:0;
+}
+
+//input number appearance ends ... ....
+
+// field styles.. ....starts....
+  .form-group-styles{
+    border:1px solid #EBEBEB; 
+    border-radius: 5px; 
+    background-color: white; 
+    padding:10px 15px 0 15px; 
+    height:60px;
+  }
+  .form-group-styles-textarea{
+    border:1px solid #EBEBEB; 
+    border-radius: 5px; 
+    background-color: white; 
+    padding:10px 15px 0 15px; 
+    min-height:60px;
+  }
+  .select-icon-style{
+    margin-top: -30px; 
+    float:right;
+    pointer-events: none; 
+    margin-right:5px;
+  }
+  .full-width {
+    width: 100%;
+    
+  }
+  .lab-cls{
+    color:#94999D; 
+    font-weight: 400;
+    font-size: 16px
+}
+
+.full-width input{
+    // color:green;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+::ng-deep .mat-select-arrow{
+    border-top:unset !important;
+}
+
+::ng-deep .mat-option-text {
+    font-weight: 600;
+}
+::ng-deep .mat-select-value{
+    // color:yellow;
+    font-weight: 600;
+}
+::ng-deep .mat-form-field-wrapper{
+padding:0px;
+}
+// fields styles ends .. .... ....
+

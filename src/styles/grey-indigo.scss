@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$grey-indigo-primary: mat-palette($mat-grey);
+
+$grey-indigo-accent:  mat-palette($mat-indigo, A200, A100, A400);
+
+$grey-indigo-warn:    mat-palette($mat-red);
+
+$grey-indigo-theme: mat-light-theme($grey-indigo-primary, $grey-indigo-accent, $grey-indigo-warn);
+
+@include angular-material-theme($grey-indigo-theme);

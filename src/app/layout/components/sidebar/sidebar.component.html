@@ -1,0 +1,63 @@
+<nav class="sidebar" [ngClass]="{ collapsed: collapsed}">
+    <div class="list-group">
+            <a class="list-group-item sidebar-logo">
+                <!-- <i class="fa fa-fw fa-user"></i> -->
+                <!-- <span>{{ 'User' }}</span> -->
+                <img src="assets/images/menu.png" width="" height="" style="opacity:1;">
+            </a>
+            <a [routerLink]="['/dashboard']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+                <!-- <i class="fa fa-fw fa-user"></i> -->
+                <!-- <span>{{ 'User' }}</span> -->
+                <img src="assets/images/dashboard.png" width="" height="" >
+            </a>
+        <a [routerLink]="['/addUser']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-user"></i> -->
+            <!-- <span>{{ 'User' }}</span> -->
+            <img src="assets/images/user.png" width="" height="">
+        </a>
+        <a [routerLink]="['/insurer']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-user-circle-o"></i> -->
+            <!-- <span>{{ 'Insurer' }}</span> -->
+            <img src="assets/images/insurer.png" width="" height="">
+        </a>
+        <a [routerLink]="['/mapTables']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-table"></i> -->
+            <!-- <span>{{ 'Mapping tables' }}</span> -->
+            <img src="assets/images/mapping-tables.png" width="" height="">
+        </a>
+        <a [routerLink]="['/sites']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-industry"></i> -->
+            <!-- <span>{{ 'Sites' }}</span> -->
+            <img src="assets/images/sites.png" width="" height="">
+        </a>
+        <a [routerLink]="['/audit']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-search-plus"></i> -->
+            <!-- <span>{{ 'Lookup_audit' }}</span> -->
+            <img src="assets/images/lookup.png" width="" height="">
+        </a>
+        
+        <a [routerLink]="['/queries']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-question"></i> -->
+            <!-- <span>{{ 'Queries' }}</span> -->
+            <img src="assets/images/queries.png" width="" height="">
+        </a>
+        <a [routerLink]="['/locks']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-lock"></i> -->
+            <!-- <span>{{ 'Locks' }}</span> -->
+            <img src="assets/images/lock.png" width="" height="">
+        </a>
+        <a [routerLink]="['/registrations']" [routerLinkActive]="['router-link-active']" class="list-group-item sidebar-logo">
+            <!-- <i class="fa fa-fw fa-edit"></i> -->
+            <!-- <span>{{ 'Registrations' }}</span> -->
+            <img src="assets/images/registration.png" width="" height="">
+        </a>
+                
+    </div>
+  
+    <!-- collapse sidebar -->
+
+    <!-- <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+        <i class="fa fa-fw fa-angle-double-left"></i>&nbsp;
+        <span>{{ 'Collapse Sidebar' }}</span>
+    </div> -->
+</nav>
