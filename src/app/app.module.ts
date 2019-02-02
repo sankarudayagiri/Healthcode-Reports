@@ -3,7 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // angular material matInput
 import { MatInputModule } from '@angular/material/input';
@@ -22,6 +22,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 import { from } from 'rxjs';
+
+import { ReportsService } from './_services/reports.service';
+
+
 
 
 // AoT requires an exported function for factories
@@ -46,10 +50,11 @@ import { from } from 'rxjs';
         NgbModule.forRoot(),
         NgxPageScrollModule,
         MatInputModule,
-        MatSelectModule
+        MatSelectModule,
+        ReactiveFormsModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard],
+    providers: [AuthGuard,ReportsService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

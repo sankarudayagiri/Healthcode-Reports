@@ -4,14 +4,11 @@ import {FormControl} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-insurer',
-  templateUrl: './insurer.component.html',
-  styleUrls: ['./insurer.component.scss'],
-  providers: []
-  
+  selector: 'app-reports',
+  templateUrl: './reports.component.html',
+  styleUrls: ['./reports.component.scss']
 })
-export class InsurerComponent implements OnInit {
-  reports:object;
+export class ReportsComponent implements OnInit {
 
   toppings = new FormControl();
   toppings2 = new FormControl();
@@ -25,8 +22,6 @@ export class InsurerComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
-    console.log("from insurer");
-       
   }
 
   sendReport(){    
@@ -37,7 +32,5 @@ export class InsurerComponent implements OnInit {
     });
     
   }
-
-  
 
 }

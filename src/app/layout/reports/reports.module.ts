@@ -6,28 +6,21 @@ import { MatSelectModule } from '@angular/material/select';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-import { InsurerRoutingModule } from './insurer-routing.module';
-import { InsurerComponent } from './insurer.component';
-
-// import { NgbDateCustomParserFormatter} from '../../shared/pipes/dateFormate';
-// import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { ReportsRoutingModule } from './reports-routing.module';
+import { ReportsComponent } from './reports.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
-  declarations: [ InsurerComponent ],
+  declarations: [ReportsComponent],
   imports: [
     CommonModule,
-    InsurerRoutingModule,
+    ReportsRoutingModule,
     MatInputModule,
     MatSelectModule,
     NgbModule.forRoot(),
     FormsModule,
     ReactiveFormsModule
   ]
-  // providers: [
-  //   {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}
-  //  ]
 })
-export class InsurerModule { }
+export class ReportsModule { }
