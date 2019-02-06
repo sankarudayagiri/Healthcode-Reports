@@ -10,25 +10,40 @@
 </div> -->
 <div  class="container-fluid">
   <div class="row">
-    <div class="col-md-3 " >
+    <!-- <div class="col-md-3 " >
       <div class="tab-cls">
-        <mat-form-field >
-          <mat-select placeholder="Contents" [formControl]="contentsData" multiple appearance="none">
+        <mat-form-field class="full-width">
+          <mat-select placeholder="Contents" [formControl]="contentsData" multiple cdkTextareaAutosize>
             <mat-option *ngFor="let content of contents" [value]="content.contentvalue">{{content.contentvalue}}</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
-    </div>
+    </div> -->
+    <div class="col-md-3">
+        <div class="tab-cls">
+            <form #loginForm="ngForm" class="full-width">
+                <label for="name">Contents</label>
+                <angular2-multiselect [data]="contentsList" [(ngModel)]="formModel.skills" 
+                          [settings]="settings" 
+                          (onSelect)="onItemSelect($event)"
+                          (onDeSelect)="OnItemDeSelect($event)" 
+                          (onSelectAll)="onSelectAll($event)" 
+                          (onDeSelectAll)="onDeSelectAll($event)" name="skills" #skills="ngModel" required style="border:none !important;">
+                </angular2-multiselect>
+            </form>
+        </div>
+      </div>
     <div class="col-md-3 " >
       <div class="tab-cls">
-          <mat-form-field >
-              <textarea matInput cdkTextareaAutosize style="overflow: hidden !important;" placeholder="Parameters" [formControl]="parameters" value=""></textarea>
+          <mat-form-field class="full-width" appearance="none" >
+              <mat-label style="padding: 5px;">Parameters</mat-label>
+              <textarea matInput [formControl]="parameters" value=""></textarea>
           </mat-form-field>
       </div>
     </div>
     <div class="col-md-3 " >
       <div class="tab-cls">
-        <mat-form-field >
+        <mat-form-field class="full-width">
           <mat-select placeholder="Report types" [formControl]="reportTypes" multiple appearance="none">
             <mat-option *ngFor="let reportType of reportTypeList" [value]="reportType">{{reportType}}</mat-option>
           </mat-select>
@@ -37,7 +52,7 @@
     </div>
     <div class="col-md-3 " >
       <div class="tab-cls">
-        <mat-form-field >
+        <mat-form-field class="full-width">
           <mat-select placeholder="Module" [formControl]="module">
               <mat-option value="VEDA">VEDA</mat-option>
               <mat-option value="COWS">COWS</mat-option>
@@ -45,11 +60,54 @@
         </mat-form-field>
       </div>
     </div>
-  </div><br>  
-  <button class="btn btn-success" style="float:right;" (click)="sendReport()">Create</button>
+    <button class="btn btn-success ml-auto" style="margin-top:10px; margin-right: 15px;" (click)="sendReport()">Create</button>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="tab-cls" style="height:300px;">
+          <mat-form-field class="full-width">
+              <mat-select placeholder="Group" [formControl]="group" appearance="none" (selectionChange)="getCatRep(0)">
+                <mat-option *ngFor="let group of groupReports" [value]="group.Group_Desc">{{group.Group_Desc}}</mat-option>
+              </mat-select>
+          </mat-form-field><br>
+          <mat-form-field class="full-width">
+              <mat-select placeholder="Categories" [formControl]="category" appearance="none" [disabled]="catDis" (selectionChange)="getCatRep(1)">
+                <mat-option *ngFor="let category of groupReports[catInd].Categories" [value]="category.Cat_Desc">{{category.Cat_Desc}}</mat-option>
+              </mat-select>
+          </mat-form-field><br>
+          <mat-form-field class="full-width">
+              <mat-select placeholder="Report Types" [formControl]="grpReports" appearance="none" [disabled]="repDis">
+                <mat-option *ngFor="let report of groupReports[catInd].Categories[repInd].Reports" [value]="report.Report_Desc">{{report.Report_Desc}}</mat-option>
+              </mat-select>
+          </mat-form-field>
+      </div>
+    </div>
+    
+  </div>
+  <!-- <button class="btn btn-success" style="float:right;" (click)="sendReport()">Create</button> -->
   <!-- <button class="btn btn-success" style="float:right;" (click)="someFunc()">Click It</button> -->
 </div><br><br>
 
+
+
+<!-- <mat-form-field >
+    <mat-select placeholder="State" [formControl]="country" appearance="none" (selectionChange)="someFunc()">
+      <mat-option *ngFor="let state of jsonData.states" [value]="state.name">{{state.name}}</mat-option>
+    </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field >
+    <mat-select placeholder="District" [formControl]="country" [disabled]="catDis">
+      <mat-option *ngFor="let district of jsonData.states[catInd].district" [value]="district.name">{{district.name}}</mat-option>
+    </mat-select>
+</mat-form-field> -->
+
+<br>
+<!-- <select (change)="someFunc()">
+  <option>hello</option>
+  <option>hai</option>
+  <option>how</option>
+</select> -->
 
 
 <!-- <mat-form-field appearance="none">

@@ -6,6 +6,517 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ReportsService {
 
+  groupReportTypes: any= [
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "Patient List",
+          "Cat_type": "PL"
+        }
+      ],
+      "Group_type": "PATIENT",
+      "Group_Desc": "Patient Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "CQP Reports",
+          "Reports": [
+            {
+              "Report_Type": "0114",
+              "Report_Desc": "Quote Request listing by Intermediary"
+            },
+            {
+              "Report_Type": "0119",
+              "Report_Desc": "Quote Request listing by Status"
+            },
+            {
+              "Report_Type": "0121",
+              "Report_Desc": "User_Information"
+            },
+            {
+              "Report_Type": "0120",
+              "Report_Desc": "Quote Request Counts By Month/Year"
+            }
+          ],
+          "Cat_type": "CQPC"
+        }
+      ],
+      "Group_type": "CQP",
+      "Group_Desc": "CQP Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "GDPR Reports",
+          "Reports": [
+            {
+              "Report_Type": "0207",
+              "Report_Desc": "GDPR Bespoke Data Export"
+            },
+            {
+              "Report_Type": "0208",
+              "Report_Desc": "GDPR Bespoke Data Export"
+            }
+          ],
+          "Cat_type": "GDPR"
+        }
+      ],
+      "Group_type": "GDPR",
+      "Group_Desc": "GDPR Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "Debtors",
+          "Reports": [
+            {
+              "Report_Type": "0082",
+              "Report_Desc": "Outstanding Invoices by Payor"
+            },
+            {
+              "Report_Type": "0083",
+              "Report_Desc": "Outstanding Invoices by Payor"
+            }
+          ],
+          "Cat_type": "DEBT"
+        },
+        {
+          "Cat_Desc": "Banking",
+          "Reports": [
+            {
+              "Report_Type": "0057",
+              "Report_Desc": "End of Day Banking List"
+            },
+            {
+              "Report_Type": "0043",
+              "Report_Desc": "End of Day Banking List"
+            }
+          ],
+          "Cat_type": "BANK"
+        },
+        {
+          "Cat_Desc": "Analysis",
+          "Reports": [
+            {
+              "Report_Type": "0147",
+              "Report_Desc": "Outstanding Tasks"
+            },
+            {
+              "Report_Type": "0161",
+              "Report_Desc": "HH Invoice Listing By Invoice Date"
+            },
+            {
+              "Report_Type": "0160",
+              "Report_Desc": "HH Invoice Listing By Invoice Date"
+            },
+            {
+              "Report_Type": "0163",
+              "Report_Desc": "HH Aged Debt Analysis"
+            },
+            {
+              "Report_Type": "0162",
+              "Report_Desc": "HH Aged Debt Analysis"
+            },
+            {
+              "Report_Type": "0165",
+              "Report_Desc": "HH Aged Debt Analysis by Payor"
+            },
+            {
+              "Report_Type": "0164",
+              "Report_Desc": "HH Aged Debt Analysis by Payor"
+            },
+            {
+              "Report_Type": "0167",
+              "Report_Desc": "HH Aged Debt Analysis By Invoice"
+            },
+            {
+              "Report_Type": "0166",
+              "Report_Desc": "HH Aged Debt Analysis By Invoice"
+            },
+            {
+              "Report_Type": "0169",
+              "Report_Desc": "HH Bespoke Invoice Report"
+            },
+            {
+              "Report_Type": "0168",
+              "Report_Desc": "HH Bespoke Invoice Report"
+            },
+            {
+              "Report_Type": "0171",
+              "Report_Desc": "HH Bespoke Write off Report"
+            },
+            {
+              "Report_Type": "0170",
+              "Report_Desc": "HH Bespoke Write off Report"
+            },
+            {
+              "Report_Type": "0146",
+              "Report_Desc": "Outstanding Tasks"
+            },
+            {
+              "Report_Type": "0059",
+              "Report_Desc": "Aged Debt Analysis by Payor"
+            },
+            {
+              "Report_Type": "0054",
+              "Report_Desc": "Aged Debt Analysis"
+            },
+            {
+              "Report_Type": "0055",
+              "Report_Desc": "Aged Debt Analysis by Payor"
+            },
+            {
+              "Report_Type": "0115",
+              "Report_Desc": "Aged Debt Analysis By Invoice"
+            },
+            {
+              "Report_Type": "0058",
+              "Report_Desc": "Aged Debt Analysis"
+            },
+            {
+              "Report_Type": "0112",
+              "Report_Desc": "Aged Debt Analysis By Invoice"
+            },
+            {
+              "Report_Type": "0193",
+              "Report_Desc": "Aged Debt Analysis By Payor By Costcentre"
+            },
+            {
+              "Report_Type": "0175",
+              "Report_Desc": "Outstanding Debt By Patient"
+            },
+            {
+              "Report_Type": "0174",
+              "Report_Desc": "Outstanding Debt by Patient"
+            },
+            {
+              "Report_Type": "0190",
+              "Report_Desc": "Patient Statement"
+            },
+            {
+              "Report_Type": "0191",
+              "Report_Desc": "Patient Statement"
+            },
+            {
+              "Report_Type": "0192",
+              "Report_Desc": "Aged Debt Analysis By Invoice By Costcentre"
+            }
+          ],
+          "Cat_type": "ANAL"
+        },
+        {
+          "Cat_Desc": "Summary",
+          "Reports": [
+            {
+              "Report_Type": "0064",
+              "Report_Desc": "Account Summary by Patient"
+            },
+            {
+              "Report_Type": "0138",
+              "Report_Desc": "Outstanding Invoices by Payor - JR"
+            },
+            {
+              "Report_Type": "0140",
+              "Report_Desc": "Outstanding Invoices by Payor - JR"
+            },
+            {
+              "Report_Type": "0142",
+              "Report_Desc": "Account Summary by Payor - JR"
+            },
+            {
+              "Report_Type": "0139",
+              "Report_Desc": "End of Month Banking List - JR"
+            },
+            {
+              "Report_Type": "0141",
+              "Report_Desc": "Earliest Service and Txn summary - JR"
+            },
+            {
+              "Report_Type": "0153",
+              "Report_Desc": "Financial Snapshot Report"
+            },
+            {
+              "Report_Type": "0154",
+              "Report_Desc": "Financial Snapshot Report"
+            },
+            {
+              "Report_Type": "0143",
+              "Report_Desc": "Account Summary by Payor - JR"
+            },
+            {
+              "Report_Type": "0144",
+              "Report_Desc": "Earliest Service and Txn summary - JR"
+            },
+            {
+              "Report_Type": "0145",
+              "Report_Desc": "End of Month Banking List - JR"
+            },
+            {
+              "Report_Type": "0129",
+              "Report_Desc": "Jasper Report 2"
+            },
+            {
+              "Report_Type": "0076",
+              "Report_Desc": "Financial Summary Analysis by Payor Type"
+            },
+            {
+              "Report_Type": "0077",
+              "Report_Desc": "Financial Summary Analysis by Payor Type"
+            },
+            {
+              "Report_Type": "0130",
+              "Report_Desc": "Jasper Report 3"
+            },
+            {
+              "Report_Type": "0065",
+              "Report_Desc": "Account Summary by Patient"
+            },
+            {
+              "Report_Type": "0066",
+              "Report_Desc": "Account Summary by Payor"
+            },
+            {
+              "Report_Type": "0067",
+              "Report_Desc": "Account Summary by Payor"
+            },
+            {
+              "Report_Type": "0128",
+              "Report_Desc": "Jasper Report 1"
+            },
+            {
+              "Report_Type": "0062",
+              "Report_Desc": "Financial Summary Report"
+            },
+            {
+              "Report_Type": "0063",
+              "Report_Desc": "Financial Summary Report"
+            }
+          ],
+          "Cat_type": "SUMM"
+        },
+        {
+          "Cat_Desc": "Invoicing",
+          "Reports": [
+            {
+              "Report_Type": "0069",
+              "Report_Desc": "Invoice Listing by Patient"
+            },
+            {
+              "Report_Type": "0068",
+              "Report_Desc": "Invoice Listing by Patient"
+            },
+            {
+              "Report_Type": "0078",
+              "Report_Desc": "Invoice Listing by Invoice Date"
+            },
+            {
+              "Report_Type": "0079",
+              "Report_Desc": "Invoice Listing by Invoice Date"
+            },
+            {
+              "Report_Type": "0080",
+              "Report_Desc": "Invoice Listing by Payor"
+            },
+            {
+              "Report_Type": "0081",
+              "Report_Desc": "Invoice Listing by Payor"
+            }
+          ],
+          "Cat_type": "INV"
+        },
+        {
+          "Cat_Desc": "Payment",
+          "Reports": [
+            {
+              "Report_Type": "0072",
+              "Report_Desc": "Payments Allocated by Payor"
+            },
+            {
+              "Report_Type": "0073",
+              "Report_Desc": "Payments Allocated by Payor"
+            },
+            {
+              "Report_Type": "0061",
+              "Report_Desc": "Payment Summary Report"
+            },
+            {
+              "Report_Type": "0159",
+              "Report_Desc": "Payment Summary Report"
+            },
+            {
+              "Report_Type": "0158",
+              "Report_Desc": "Payment Summary Report"
+            },
+            {
+              "Report_Type": "0172",
+              "Report_Desc": "HH Bespoke Payment Summary Report"
+            },
+            {
+              "Report_Type": "0173",
+              "Report_Desc": "HH Bespoke Payment Summary Report"
+            },
+            {
+              "Report_Type": "0151",
+              "Report_Desc": "Payment Summary without Invoice Detail"
+            },
+            {
+              "Report_Type": "0152",
+              "Report_Desc": "Payment Summary without Invoice detail"
+            },
+            {
+              "Report_Type": "0149",
+              "Report_Desc": "Unassigned Credit Report"
+            },
+            {
+              "Report_Type": "0150",
+              "Report_Desc": "Unassigned Credit Report"
+            },
+            {
+              "Report_Type": "0060",
+              "Report_Desc": "Payment Summary Report"
+            },
+            {
+              "Report_Type": "0074",
+              "Report_Desc": "Payments Allocated by Invoice Date"
+            },
+            {
+              "Report_Type": "0075",
+              "Report_Desc": "Payments Allocated by Invoice Date"
+            },
+            {
+              "Report_Type": "0070",
+              "Report_Desc": "Payments Allocated by Patient"
+            },
+            {
+              "Report_Type": "0071",
+              "Report_Desc": "Payments Allocated by Patient"
+            }
+          ],
+          "Cat_type": "PAYM"
+        },
+        {
+          "Cat_Desc": "Reconciliation",
+          "Reports": [
+            {
+              "Report_Type": "0134",
+              "Report_Desc": "Transaction Listing By Patient"
+            },
+            {
+              "Report_Type": "0133",
+              "Report_Desc": "Transaction Listing By Patient"
+            },
+            {
+              "Report_Type": "0056",
+              "Report_Desc": "End of Month Banking List"
+            },
+            {
+              "Report_Type": "0122",
+              "Report_Desc": "Earliest Service and Transaction Summary "
+            },
+            {
+              "Report_Type": "0123",
+              "Report_Desc": "Earliest Service and Transaction Summary"
+            },
+            {
+              "Report_Type": "0053",
+              "Report_Desc": "End of Month Banking List"
+            }
+          ],
+          "Cat_type": "REC"
+        }
+      ],
+      "Group_type": "ACCOUNT",
+      "Group_Desc": "Account Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "Solicitor",
+          "Cat_type": "SOLI"
+        },
+        {
+          "Cat_Desc": "Insurer",
+          "Cat_type": "INS"
+        }
+      ],
+      "Group_type": "CONTACT",
+      "Group_Desc": "Contact Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "Misc Reports",
+          "Reports": [
+            {
+              "Report_Type": "0042",
+              "Report_Desc": "Transaction Audit Report"
+            },
+            {
+              "Report_Type": "0037",
+              "Report_Desc": "Bespoke Data Export"
+            },
+            {
+              "Report_Type": "0040",
+              "Report_Desc": "Bespoke Data Export"
+            },
+            {
+              "Report_Type": "0041",
+              "Report_Desc": "Transaction Audit Report"
+            },
+            {
+              "Report_Type": "0200",
+              "Report_Desc": "NHS SBS Report"
+            }
+          ],
+          "Cat_type": "MISC"
+        }
+      ],
+      "Group_type": "MISC",
+      "Group_Desc": "Misc Reports"
+    },
+    {
+      "Categories": [
+        {
+          "Cat_Desc": "Appointment Reports",
+          "Reports": [
+            {
+              "Report_Type": "0089",
+              "Report_Desc": "Appointment Listing by Appointment Type"
+            },
+            {
+              "Report_Type": "0090",
+              "Report_Desc": "Appointment Listing by Appointment Type"
+            },
+            {
+              "Report_Type": "0091",
+              "Report_Desc": "Appointment Status counts"
+            },
+            {
+              "Report_Type": "0092",
+              "Report_Desc": "Appointment Status counts"
+            },
+            {
+              "Report_Type": "0087",
+              "Report_Desc": "Appointment Listing by Status"
+            },
+            {
+              "Report_Type": "0088",
+              "Report_Desc": "Appointment Listing by Status"
+            },
+            {
+              "Report_Type": "0202",
+              "Report_Desc": "Appointment Listing by Specialist"
+            }
+          ],
+          "Cat_type": "APP"
+        }
+      ],
+      "Group_type": "APPOINT",
+      "Group_Desc": "Appointment Reports"
+    }
+  ]
+
   contents: object=[
                     {
                       "contentid": "27",
@@ -5756,6 +6267,10 @@ export class ReportsService {
    getContents(){
     //  return this.http.get("https://jsonplaceholder.typicode.com/posts");
     return this.contents;
+   }
+
+   getGroupReport(){
+     return this.groupReportTypes;
    }
 
   //  sendReport(){

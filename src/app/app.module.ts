@@ -3,7 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // angular material matInput
 import { MatInputModule } from '@angular/material/input';
@@ -13,10 +13,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgxPageScrollModule } from 'ngx-page-scroll';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
-//import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-//import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-
+//Multi dropdown
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,20 +24,6 @@ import { from } from 'rxjs';
 
 import { ReportsService } from './_services/reports.service';
 
-
-
-
-// AoT requires an exported function for factories
-// export const createTranslateLoader = (http: HttpClient) => {
-//     /* for development
-//     return new TranslateHttpLoader(
-//         http,
-//         '/start-angular/SB-Admin-BS4-Angular-6/master/dist/assets/i18n/',
-//         '.json'
-//     ); */
-//     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-// };
-
 @NgModule({
     imports: [
         CommonModule,
@@ -46,6 +31,7 @@ import { ReportsService } from './_services/reports.service';
         BrowserAnimationsModule,       
         HttpClientModule,       
         AppRoutingModule,
+        AngularMultiSelectModule,
         FormsModule,
         NgbModule.forRoot(),
         NgxPageScrollModule,

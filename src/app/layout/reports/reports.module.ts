@@ -11,6 +11,9 @@ import { ReportsComponent } from './reports.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// multi select
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+
 @NgModule({
   declarations: [ReportsComponent],
   imports: [
@@ -20,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMultiSelectModule
   ]
 })
 export class ReportsModule { }

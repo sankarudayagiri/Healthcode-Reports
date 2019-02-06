@@ -14,6 +14,9 @@ import { InsurerComponent } from './insurer.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// mutli dropdown
+import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown';
+
 
 @NgModule({
   declarations: [ InsurerComponent ],
@@ -24,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSelectModule,
     NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMultiSelectModule
   ]
   // providers: [
   //   {provide: NgbDateParserFormatter, useClass: NgbDateCustomParserFormatter}

@@ -1,48 +1,57 @@
+<!-- <div style="padding: 30px; height: 600px;">
+  <angular2-multiselect [data]="itemList" 
+      [(ngModel)]="selectedItems" 
+      [settings]="settings" 
+      (onSelect)="onItemSelect($event)"
+      (onDeSelect)="OnItemDeSelect($event)" 
+      (onSelectAll)="onSelectAll($event)" 
+      (onDeSelectAll)="onDeSelectAll($event)">
+  </angular2-multiselect>
 
-<!-- <p>
-  insurer works! 
-</p> -->
-<!-- <div *ngFor="let report of reports">
-  <li>{{report.body}}</li>
-  <li>{{report.id}}</li>
-  <li>{{report.title}}</li>
-  <hr>
 </div> -->
-<div  class="container-fluid">
+
+
+<div class="container">
   <div class="row">
-    <div class="col-md-4 " >
-      <div class="tab-cls">
-        <mat-form-field appearance="none">
-          <mat-select placeholder="Toppings" [formControl]="toppings" multiple appearance="none">
-            <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="col-md-6">
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm" style="border: 1px solid #ccc; padding: 10px; height: 600px;">
+            <div class="form-group">
+                <label for="name">Skills</label>
+                <angular2-multiselect [data]="someList" [(ngModel)]="formModel.skills" 
+                                      [settings]="settings" 
+                                      (onSelect)="onItemSelect($event)"
+                                      (onDeSelect)="OnItemDeSelect($event)" 
+                                      (onSelectAll)="onSelectAll($event)" 
+                                      (onDeSelectAll)="onDeSelectAll($event)" name="skills" #skills="ngModel" required style="border:none !important;">
+                </angular2-multiselect>
+                <!-- <div [hidden]="skills.valid" class="alert alert-danger">
+                    <div [hidden]="!skills.hasError('required')">Atleast one Skill is required</div>
+                </div> -->
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required pattern="[a-zA-Z][a-zA-Z ]+" [(ngModel)]="formModel.name" name="name"
+                    #name="ngModel">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    <div [hidden]="!name.hasError('required')">Name is required</div>
+                    <div [hidden]="!name.hasError('pattern')">Only alphabetsallowed</div>
+        
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Email Address</label>
+                <input type="text" class="form-control" id="emailaddress" required [(ngModel)]="formModel.email" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                    #email="ngModel">
+                <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+                    <div [hidden]="!email.hasError('required')">Email is required</div>
+                    <div [hidden]="!email.hasError('pattern')">Email format should be <small><b>joe@abc.com</b></small></div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success btn-block" [disabled]="!loginForm.form.valid">Submit</button>
+        </form>
     </div>
-    <div class="col-md-4 " >
-      <div class="tab-cls"><mat-form-field appearance="none">
-        <mat-select placeholder="Toppings2" [formControl]="toppings2" multiple appearance="none">
-          <mat-option *ngFor="let topping2 of toppingList2" [value]="topping2">{{topping2}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
+    <div class="col-md-6">
+        <button class="btn btn-success btn-block" (click)="someFunc()">Click it</button>
     </div>
-    <div class="col-md-4 " >
-      <div class="tab-cls"><mat-form-field appearance="none">
-        <mat-select placeholder="Toppings3" [formControl]="toppings3" multiple appearance="none">
-          <mat-option *ngFor="let topping3 of toppingList3" [value]="topping3">{{topping3}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
-  </div><br>  
-  <button class="btn btn-success" style="float:right;" (click)="sendReport()">Create</button>
+  </div>
 </div>
-
-
-<!-- <mat-form-field appearance="none">
-  <mat-select placeholder="Toppings" [formControl]="toppings" multiple appearance="none">
-    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-  </mat-select>
-</mat-form-field> -->
-

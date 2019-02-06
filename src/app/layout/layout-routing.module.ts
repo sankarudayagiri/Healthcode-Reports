@@ -7,7 +7,7 @@ const routes: Routes = [
         path: '',
         component: LayoutComponent,
         children: [
-            { path: '', redirectTo: 'reports', pathMatch: 'prefix' },
+            { path: '', redirectTo: 'insurer', pathMatch: 'prefix' },
             { path: 'reports', loadChildren: './reports/reports.module#ReportsModule' },
             // { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
             // { path: 'user', loadChildren: './user/user.module#UserModule' },
