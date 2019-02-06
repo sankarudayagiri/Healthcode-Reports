@@ -6267,6 +6267,7 @@ export class ReportsService {
    getContents(){
     //  return this.http.get("https://jsonplaceholder.typicode.com/posts");
     return this.contents;
+    // return this.http.get("https://example.com/contents");
    }
 
    getGroupReport(){
