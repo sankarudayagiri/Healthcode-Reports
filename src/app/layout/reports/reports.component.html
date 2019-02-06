@@ -15,10 +15,7 @@
                 <label for="name">Contents</label>
                 <angular2-multiselect [data]="contentsList" [(ngModel)]="formModel.contents" 
                           [settings]="settings" 
-                          (onSelect)="onItemSelect($event)"
-                          (onDeSelect)="OnItemDeSelect($event)" 
-                          (onSelectAll)="onSelectAll($event)" 
-                          (onDeSelectAll)="onDeSelectAll($event)" name="contents" #contents="ngModel" required style="border:none !important;">
+                           name="contents" #contents="ngModel" required style="border:none !important;">
                 </angular2-multiselect>
             </form>
             <br>
@@ -82,6 +79,7 @@
   <!-- <button class="btn btn-success" style="float:right;" (click)="sendReport()">Create</button> -->
   <!-- <button class="btn btn-success" style="float:right;" (click)="someFunc()">Click It</button> -->
 </div><br><br>
+<p>{{requestString}}</p>
 
 
 

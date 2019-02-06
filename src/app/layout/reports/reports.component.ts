@@ -57,15 +57,15 @@ export class ReportsComponent implements OnInit {
   ngOnInit() {
     this.contents=this.reportService.getContents();
     this.groupReports=this.reportService.getGroupReport();
-    console.log(this.contents);
+    // console.log(this.contents);
     var lenn=Object.keys(this.contents).length;
-    console.log(Object.keys(this.contents).length);
+    // console.log(Object.keys(this.contents).length);
     for(let j=0;j<lenn;j++){
       
       this.contentsList.push({id:1+j,itemName:this.contents[j].contentvalue});
       
     }
-    console.log("contentsList",this.contentsList);
+    // console.log("contentsList",this.contentsList);
         
   this.settings = {
     text: "Select Contents",
@@ -77,9 +77,9 @@ export class ReportsComponent implements OnInit {
 
   // testing
 
-  var str = "qqqqqq,aaaaa,ssssss,eeee,gggg,tttt,sssss,";
-  var res = str.split(",");
-  console.log(res);
+  // var str = "qqqqqq,aaaaa,ssssss,eeee,gggg,tttt,sssss,";
+  // var res = str.split(",");
+  // console.log(res);
   }
 
   sendReport(){  
@@ -137,20 +137,20 @@ export class ReportsComponent implements OnInit {
    }
   }
 
-  onItemSelect(item: any) {
-    console.log(item);
-    console.log(this.selectedItems);
-  }
-  OnItemDeSelect(item: any) {
-      console.log(item);
-      console.log(this.selectedItems);
-  }
-  onSelectAll(items: any) {
-      console.log(items);
-  }
-  onDeSelectAll(items: any) {
-      console.log(items);
-  }
+  // onItemSelect(item: any) {
+  //   console.log("multi-select",item);
+  //   console.log(this.selectedItems);
+  // }
+  // OnItemDeSelect(item: any) {
+  //     console.log("multi-select",item);
+  //     console.log(this.selectedItems);
+  // }
+  // onSelectAll(items: any) {
+  //     console.log("multi-select",items);
+  // }
+  // onDeSelectAll(items: any) {
+  //     console.log("multi-select",items);
+  // }
 
   // someFunc(){
   //   console.log(this.addContent.value);
