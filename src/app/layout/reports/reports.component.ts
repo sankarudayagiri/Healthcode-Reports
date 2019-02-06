@@ -13,7 +13,8 @@ export class ReportsComponent implements OnInit {
   module = new FormControl();
   parameters =new FormControl();
   reportTypes= new FormControl();
-  contentsData= new FormControl();
+  // contentsData= new FormControl();
+  addContent = new FormControl();
 
   
   group =new FormControl();
@@ -27,14 +28,19 @@ export class ReportsComponent implements OnInit {
   
   contents: object;
   contentsList:any=[];
+  addContentList:any=[];
   groupReports: any;
+  ContentsData:any=[];
+
+  // someData:any=[];
   
-  requestString: object={
+  finaleString: object={
     "contents":"",
     "parameters":"",
     "reportTypes":"",
     "module":""
   };
+  requestString:any="";
   reportTypeList: string[] = ['PDF', 'XLS', 'CSV', 'TXT'];    
 
   itemList:any = [];
@@ -68,19 +74,43 @@ export class ReportsComponent implements OnInit {
     classes: "myclass custom-class",
     limitSelection: 15
   };
+
+  // testing
+
+  var str = "qqqqqq,aaaaa,ssssss,eeee,gggg,tttt,sssss,";
+  var res = str.split(",");
+  console.log(res);
   }
 
-  sendReport(){       
-    this.requestString['contents']=this.contentsData.value;
-    this.requestString['parameters']=this.parameters.value;
-    this.requestString['reportTypes']=this.reportTypes.value;
-    this.requestString['module']=this.module.value;
-    console.log("finale data",JSON.stringify(this.requestString));
-
-    this.http.post("https://hcreports/api/report",JSON.stringify(this.requestString)).subscribe(posts => {
-      console.log("hello",posts);
-    });
+  sendReport(){  
+   
+    if(this.addContent.value!=null){
+      this.addContentList=this.addContent.value.split(",");
+    }
+    var fCLen=Object.keys(this.formModel.contents).length;
+    for(let i=0;i<fCLen;i++ ){
+        this.ContentsData.push(this.formModel.contents[i].itemName);
+    }
+    console.log("final value",this.ContentsData);
+    if(this.addContent.value!=null && this.addContentList!=""){
+      // console.log("hello");
+      this.ContentsData=this.ContentsData.concat(this.addContentList);      
+    }
+    console.log("final value 2",this.ContentsData)
+       
+    this.finaleString['contents']=this.ContentsData;
+    this.finaleString['parameters']=this.parameters.value;
+    this.finaleString['reportTypes']=this.reportTypes.value;
+    this.finaleString['module']=this.module.value;
     
+    this.requestString=JSON.stringify(this.finaleString);
+    console.log("finale data",this.requestString);
+
+    this.http.post("https://hcreports/api/report",this.requestString).subscribe(posts => {
+      console.log("hello",posts);
+      
+    });
+    this.ContentsData=[];
   }
   getCatRep(num:number){
     // debugger;
@@ -121,5 +151,28 @@ export class ReportsComponent implements OnInit {
   onDeSelectAll(items: any) {
       console.log(items);
   }
+
+  // someFunc(){
+  //   console.log(this.addContent.value);
+  //   if(this.addContent.value!=null){
+  //     this.addContentList=this.addContent.value.split(",");
+  //   }
+  //   console.log("addContentList",this.addContentList);
+  //   console.log("contents",this.formModel.contents);
+  //   console.log(Object.keys(this.formModel.contents).length);
+  //   var fCLen=Object.keys(this.formModel.contents).length;
+  //   for(let i=0;i<fCLen;i++ ){
+  //       this.ContentsData.push(this.formModel.contents[i].itemName);
+  //   }
+  //   console.log("final value",this.ContentsData);
+  //   if(this.addContent.value!=null && this.addContentList!=""){
+  //     // console.log(this.someData.concat(this.addContentList));
+  //     console.log("hello");
+  //     this.ContentsData=this.ContentsData.concat(this.addContentList);
+      
+  //   }
+  //   console.log("final value 2",this.ContentsData)
+  //   this.ContentsData=[];
+  // }
 
 }
