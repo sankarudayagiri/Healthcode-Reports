@@ -26,11 +26,12 @@ export class ReportsComponent implements OnInit {
   catDis:boolean=true;
   repDis:boolean=true;
   
-  contents: object;
+  contents: any=[];
   contentsList:any=[];
   addContentList:any=[];
   groupReports: any;
   ContentsData:any=[];
+  contets:any;
 
   // someData:any=[];
   
@@ -55,16 +56,25 @@ export class ReportsComponent implements OnInit {
   constructor(private http:HttpClient, private reportService:ReportsService) { }
 
   ngOnInit() {
-    this.contents=this.reportService.getContents();
+    this.reportService.getContents().subscribe((res) => {
+      console.log("repotsCOmponent",res);
+      this.contents=res;
+      var lenn=Object.keys(this.contents).length;
+      for(let j=0;j<lenn;j++){        
+        this.contentsList.push({id:1+j,itemName:this.contents[j].contentvalue});        
+      }
+      
+    });
+    // this.contents=this.reportService.getContents();
     this.groupReports=this.reportService.getGroupReport();
-    // console.log(this.contents);
-    var lenn=Object.keys(this.contents).length;
-    // console.log(Object.keys(this.contents).length);
-    for(let j=0;j<lenn;j++){
+    console.log("hai",this.contents);
+    // var lenn=Object.keys(this.contents).length;
+    // // console.log(Object.keys(this.contents).length);
+    // for(let j=0;j<lenn;j++){
       
-      this.contentsList.push({id:1+j,itemName:this.contents[j].contentvalue});
+    //   this.contentsList.push({id:1+j,itemName:this.contents[j].contentvalue});
       
-    }
+    // }
     // console.log("contentsList",this.contentsList);
         
   this.settings = {
@@ -174,5 +184,8 @@ export class ReportsComponent implements OnInit {
   //   console.log("final value 2",this.ContentsData)
   //   this.ContentsData=[];
   // }
+  someFunc(){
+    this.contets=this.contents;
+  }
 
 }

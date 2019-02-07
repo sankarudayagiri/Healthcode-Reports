@@ -6255,6 +6255,7 @@ export class ReportsService {
                       "contentvalue": "SITEID"
                     }
                   ];
+    somValue:any=[];
 
   constructor(private http:HttpClient) {
 
@@ -6265,9 +6266,12 @@ export class ReportsService {
     
    }
    getContents(){
-    //  return this.http.get("https://jsonplaceholder.typicode.com/posts");
+    //  debugger;
+     return this.http.get("https://jsonplaceholder.typicode.com/posts");
+     
+    //  return this.somValue;
     // return this.contents;
-    return this.http.get("https://example.com/contents");
+    // return this.http.get("https://example.com/contents");
    }
 
    getGroupReport(){
