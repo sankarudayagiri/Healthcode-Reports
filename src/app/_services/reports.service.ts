@@ -6267,7 +6267,8 @@ export class ReportsService {
    }
    getContents(){
     //  debugger;
-     return this.http.get("https://jsonplaceholder.typicode.com/posts");
+	
+     return this.http.get("http://localhost:8080/hcreports/api/contentColumns");
      
     //  return this.somValue;
     // return this.contents;

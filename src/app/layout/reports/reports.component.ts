@@ -57,12 +57,14 @@ export class ReportsComponent implements OnInit {
 
   ngOnInit() {
     this.reportService.getContents().subscribe((res) => {
-      console.log("repotsCOmponent",res);
-      this.contents=res;
+      console.log("repotsCOmponent",res.responseString);
+      this.contents=JSON.parse(res.responseString);
       var lenn=Object.keys(this.contents).length;
+	  console.log('len',lenn);
       for(let j=0;j<lenn;j++){        
         this.contentsList.push({id:1+j,itemName:this.contents[j].contentvalue});        
       }
+	  console.log("contentslist",this.contentsList);
       
     });
     // this.contents=this.reportService.getContents();
