@@ -184,8 +184,8 @@ export class ReportsComponent implements OnInit {
   //   console.log("final value 2",this.ContentsData)
   //   this.ContentsData=[];
   // }
-  someFunc(){
-    this.contets=this.contents;
-  }
+  // someFunc(){
+  //   this.contets=this.contents;
+  // }
 
 }
