@@ -33,7 +33,10 @@ export class ReportsComponent implements OnInit {
   ContentsData:any=[];
   contets:any;
 
-  // someData:any=[];
+  contentsJson:any={status:"",
+                message:"",
+                responseString:""
+              };
   
   finaleString: object={
     "contents":"",
@@ -57,8 +60,10 @@ export class ReportsComponent implements OnInit {
 
   ngOnInit() {
     this.reportService.getContents().subscribe((res) => {
-      console.log("repotsCOmponent",res.responseString);
-      this.contents=JSON.parse(res.responseString);
+      console.log("repotsCOmponent",res);
+      this.contentsJson=res;
+      this.contents=JSON.parse(this.contentsJson.responseString);
+      console.log("contentes",this.contents.status);
       var lenn=Object.keys(this.contents).length;
 	  console.log('len',lenn);
       for(let j=0;j<lenn;j++){        
